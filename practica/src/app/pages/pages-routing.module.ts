@@ -4,7 +4,7 @@ import { MainPageComponent } from './sections/main-page/main-page.component';
 import { PagesComponent } from './pages.component';
 import { RizhiComponentComponent } from '../modules/administration/pages/users-page/component/rizhi-component/rizhi-component.component';
 import { NewsComponent } from './sections/news/news.component';
-import { AdminsComponent } from 'src/app/pages/sections/admins/admins.component';  // ← импорт компонента админов
+import { AdminsComponent } from 'src/app/pages/admins/admins.component';
 
 const routes: Routes = [
   {
