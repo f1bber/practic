@@ -38,12 +38,12 @@ import { AdminsComponent } from './pages/admins/admins.component';
     AddNewsComponent,
     AdminsComponent,
 
-    
+
 
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
     AppRoutingModule,
     SharedModule
   ],
