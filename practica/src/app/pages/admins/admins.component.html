@@ -1,19 +1,21 @@
-<h2>Управление администраторами</h2>
+<div class="admins-page__header">
+    <p>Администраторы</p>
+    <button (click)="onAddAdmin()">Добавить администратора</button>
+</div>
 
-<div *ngIf="loading">Загрузка...</div>
-<div *ngIf="error" class="error">{{ error }}</div>
+<div class="admins-page__content">
+    <div class="admins-page__table-wrapper">
+    <app-table
+        [columnHeaders]="['id', 'Логин', 'Активен', 'Дата рождения', 'Создан']"
+        [data]="admins"
+        (rowClick)="onAdminSelect($event)">
+    </app-table>
+    </div>
 
-<table *ngIf="!loading && !error" border="1" cellpadding="8" cellspacing="0">
-    <thead>
-    <tr><th>ID</th><th>Логин</th><th>Активен</th><th>Дата рождения</th><th>Создан</th></tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let admin of admins">
-        <td>{{ admin.admin_id }}</td>
-        <td>{{ admin.admin_login }}</td>
-        <td>{{ admin.is_active_admin ? 'Да' : 'Нет' }}</td>
-        <td>{{ admin.admin_birth_date || '—' }}</td>
-        <td>{{ admin.created_at | date:'dd.MM.yyyy' }}</td>
-    </tr>
-    </tbody>
-</table>
+  <aside class="admins-page__aside" *ngIf="showForm">
+    <app-add-admin-form 
+        (adminCreated)="onAdminCreated()"
+        (close)="showForm = false">
+    </app-add-admin-form>
+    </aside>
+</div>
