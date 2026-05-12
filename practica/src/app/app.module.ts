@@ -20,7 +20,8 @@ import { NewsComponent } from './pages/sections/news/news.component';
 import { AddNewsComponent } from './pages/sections/add-news/add-news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminsComponent } from './pages/admins/admins.component';
-
+import { FormsModule } from '@angular/forms';
+import { AddAdminFormComponent } from './pages/admins/add-admin-form.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AdminsComponent } from './pages/admins/admins.component';
     NewsComponent,
     AddNewsComponent,
     AdminsComponent,
+    AddAdminFormComponent,
 
 
 
@@ -44,6 +46,7 @@ import { AdminsComponent } from './pages/admins/admins.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule,
     SharedModule
   ],
